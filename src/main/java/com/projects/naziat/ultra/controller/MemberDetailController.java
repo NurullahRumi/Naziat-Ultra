@@ -7,6 +7,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 import static com.projects.naziat.ultra.constant.AppConstant.DEFAULT_PAGE_SIZE;
 
 @RestController
@@ -16,8 +18,8 @@ public class MemberDetailController {
     private final MemberDetailService memberDetailService;
 
     @GetMapping
-    public Page<MemberDetailEntity> getMemberDetails(@RequestParam(defaultValue = "0") int page){
-        Page<MemberDetailEntity> memberDetails = memberDetailService.getMembersDetails(PageRequest.of(page, DEFAULT_PAGE_SIZE));
+    public List<MemberDetailEntity> getMemberDetails(){
+        List<MemberDetailEntity> memberDetails = memberDetailService.getMembersDetails();
         return memberDetails;
     }
 

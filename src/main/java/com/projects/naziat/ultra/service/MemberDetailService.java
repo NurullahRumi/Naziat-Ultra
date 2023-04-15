@@ -8,6 +8,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.UUID;
 
 @Service
@@ -16,8 +17,8 @@ public class MemberDetailService {
     public static final String MEMBER_NOT_FOUND = "Member not found";
     private final MemberDetailRepository memberDetailRepository;
 
-    public Page<MemberDetailEntity> getMembersDetails(Pageable pageable){
-        return memberDetailRepository.findAll(pageable);
+    public List<MemberDetailEntity> getMembersDetails(){
+        return memberDetailRepository.findAll();
     }
 
     public MemberDetailEntity getMemberDetail(UUID id){

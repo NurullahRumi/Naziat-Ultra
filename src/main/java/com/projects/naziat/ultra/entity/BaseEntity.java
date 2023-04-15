@@ -1,5 +1,7 @@
 package com.projects.naziat.ultra.entity;
 
+import com.projects.naziat.ultra.constant.AppConstant;
+import com.projects.naziat.ultra.constant.EntityConstant;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -45,7 +47,7 @@ public class BaseEntity implements Serializable {
     void onCreate(){
         this.createdAt = OffsetDateTime.now();
         if (this.createdBy == null){
-            this.createdBy = "";
+            this.createdBy = AppConstant.ANONYMOUS_USER;
         }
     }
 

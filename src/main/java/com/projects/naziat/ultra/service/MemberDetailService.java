@@ -24,8 +24,8 @@ public class MemberDetailService {
         return memberDetailRepository.findById(id).orElseThrow(()->new NotFoundException(MEMBER_NOT_FOUND));
     }
 
-    public void createMemberDetail(MemberDetailEntity request){
-        memberDetailRepository.save(request);
+    public MemberDetailEntity createMemberDetail(MemberDetailEntity request){
+        return memberDetailRepository.save(request);
     }
 
     public void updateMemberDetail(MemberDetailEntity request){

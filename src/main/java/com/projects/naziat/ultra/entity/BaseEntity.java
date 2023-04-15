@@ -1,7 +1,6 @@
 package com.projects.naziat.ultra.entity;
 
 import com.projects.naziat.ultra.constant.AppConstant;
-import com.projects.naziat.ultra.constant.EntityConstant;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
